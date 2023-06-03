@@ -107,11 +107,7 @@ body {
 .site-nav .item {
     margin-right: 40px;
    }
-.site-nav .link{
-        padding-top: 24px;
-        padding-bottom: 24px;
-        transition: color var(--funktion);
-}
+
 .site-nav .item:last-child{
     margin-right: 0px;
 }
@@ -122,11 +118,13 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em; 
     display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    transition: color var(--funktion);
 }
 .site-nav .underlined{
     color: var(--button-color);
     position: relative;
-    transition: var(--funktion);
 }
 .underlined::after{
     content: "";
@@ -501,8 +499,8 @@ padding: 120px 0px;
         border: 1px solid var(--client-logo);
         border-radius: 4px;
         color: var(--client-logo);
-        transition: border-color var(--funktion);
-        transition: color var(--funktion);
+        transition: border-color var(--funktion),
+            color var(--funktion);
 }
 .our-client .list-client{
     display: block;
@@ -580,10 +578,10 @@ display: flex;
 .portfolio .pointer {
     padding: 12px 24px;
     border: 1px solid var(--frame);
-    transition: color var(--funktion);
-    transition: background-color var(--funktion);
-    transition: border-color var(--funktion);
-    transition: box-shadow var(--funktion);
+    transition: color var(--funktion),
+        background-color var(--funktion),
+        border-color var(--funktion),
+        box-shadow var(--funktion);
 }
 .portfolio .pointer:hover,
 .portfolio .pointer:focus {
@@ -595,7 +593,7 @@ display: flex;
 }
 /* секция portfolio */
 .portfolio {
-    padding: 96px 0 120px
+    padding: 96px 0 120px;
 }
 .portfolio .port-btn {
     margin-right: 24px;
@@ -639,6 +637,7 @@ margin-bottom: 0px;
         0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
+        transition: box-shadow var(--funktion);
 }
 .portfolio .port-item {
     padding: 32px 16px;
@@ -665,14 +664,18 @@ margin-bottom: 0px;
     color: var(--primary-text-color)
         /* --primary-text-color: #434455; */
 }
-.link{
-    position: relative;
-    overflow: hidden
-}
 
+.port-overlay{
+position: relative;
+overflow: hidden;
+}
 .port-overlay:hover .overlay {
-    transform: translatey(0);
-    overflow: hidden
+     transform: translateY(0%);
+     overflow: hidden;
+ }
+.port-item:focus .overlay {
+    transform: translateY(0%);
+    overflow: hidden;
 }
 .overlay {
 position: absolute;
@@ -692,10 +695,9 @@ letter-spacing: 0.02em;
 color: #F4F4FD;
 overflow: auto;
 transform: translate(0px, 100%);
-
-transition: var(--funktion);
+transition: transform var(--funktion);
 }
-.port-item:hover .overlay,
-.port-item:focus .overlay {
+/* .port-item:hover .overlay,
+.port-item:focus .overlay{
     transform: translateY(0%);
-} 
+}  */
