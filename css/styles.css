@@ -629,7 +629,8 @@ margin-bottom: 0px;
     margin-right: 0px;
 }
 .portfolio .link{
-    display: block
+    display: block;
+    transition: box-shadow var(--funktion);
 }
 .portfolio .link:hover,
 .portfolio .link:focus {
@@ -637,7 +638,7 @@ margin-bottom: 0px;
         0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
-        transition: box-shadow var(--funktion);
+     
 }
 .portfolio .port-item {
     padding: 32px 16px;
@@ -669,14 +670,12 @@ margin-bottom: 0px;
 position: relative;
 overflow: hidden;
 }
-.port-overlay:hover .overlay {
+.port-overlay-link:hover .overlay, 
+.port-overlay-link:focus .overlay {
      transform: translateY(0%);
      overflow: hidden;
  }
-.port-item:focus .overlay {
-    transform: translateY(0%);
-    overflow: hidden;
-}
+
 .overlay {
 position: absolute;
 top: 0;
@@ -697,7 +696,3 @@ overflow: auto;
 transform: translate(0px, 100%);
 transition: transform var(--funktion);
 }
-/* .port-item:hover .overlay,
-.port-item:focus .overlay{
-    transform: translateY(0%);
-}  */
