@@ -254,47 +254,7 @@ border-radius: 4px;
     letter-spacing: 0.02em;
     color: var(--title-text-color);
  }
- .backdrop{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(46, 47, 66, 0.4) ;  /* #2E2F42 */
-    /* visibility */
- }
- .backdrop.is-hidden{
-    opacity: 0;
-    pointer-events: none;
- }
-
-
-.modal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    min-width: 408px;
-    min-height: 576px;
-    background-color: #fff;
-
-}
-.icon-modal-buttom{
-    position: absolute;
-        top: 24px;
-        right: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #E7E9FC;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        padding: 0;
-        cursor: pointer;
-}
+ 
 /* 2га секція  */
 
 
@@ -695,4 +655,68 @@ color: #F4F4FD;
 overflow: auto;
 transform: translate(0px, 100%);
 transition: transform var(--funktion);
+}
+
+.backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    /* #2E2F42 */
+    transition: opacity var(--funktion), visibility var(--funktion);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    min-width: 408px;
+    min-height: 584px;
+    background-color: #fcfcfc;
+    box-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform var(--funktion)
+}
+
+.icon-modal-buttom {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+    padding: 0;
+    cursor: pointer;
+    transition:
+     background-color var(--funktion), 
+     border var(--funktion);
+}
+.icon-modal-buttom:hover, .icon-modal-buttom:focus {
+    background-color: var(--button-color);
+    border: none;
+    fill: var(--primary-white-color)
+}
+.icon-modal-close{
+transition: fill var(--funktion)
 }
